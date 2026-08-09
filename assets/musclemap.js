@@ -52,13 +52,13 @@ const BADGE_OVERLAYS = {
   biceps: () => `<ellipse cx="18" cy="38" rx="8" ry="13" fill="${H}" /><ellipse cx="82" cy="38" rx="8" ry="13" fill="${H}" />`,
   forearms: () => `<ellipse cx="11.5" cy="65" rx="7" ry="12.5" fill="${H}" /><ellipse cx="88.5" cy="65" rx="7" ry="12.5" fill="${H}" />`,
   quads: () => `<ellipse cx="39.5" cy="100" rx="9" ry="17" fill="${H}" /><ellipse cx="60.5" cy="100" rx="9" ry="17" fill="${H}" />`,
-  traps: () => `<polygon points="50,19 32,32 41,38 50,30 59,38 68,32" fill="${H}" />`,
+  traps: () => `<polygon points="50,20 30,34 42,48 50,58 58,48 70,34" fill="${H}" />`,
   lats: () => `
-    <path d="M32,31 C21,42 20,58 30,68 C35,58 37,44 35,32 Z" fill="${H}" />
-    <path d="M68,31 C79,42 80,58 70,68 C65,58 63,44 65,32 Z" fill="${H}" />
+    <path d="M30,33 C18,44 17,60 28,72 C34,60 37,45 34,33 Z" fill="${H}" />
+    <path d="M70,33 C82,44 83,60 72,72 C66,60 63,45 66,33 Z" fill="${H}" />
   `,
   triceps: () => `<ellipse cx="18" cy="38" rx="8" ry="13" fill="${H}" /><ellipse cx="82" cy="38" rx="8" ry="13" fill="${H}" />`,
-  glutes: () => `<path d="M35,84 C33,90 35,97 40,98 C45,97 47,90 45,84 Z" fill="${H}" /><path d="M55,84 C53,90 55,97 60,98 C65,97 67,90 65,84 Z" fill="${H}" />`,
+  glutes: () => `<ellipse cx="41" cy="89" rx="10" ry="8.5" fill="${H}" /><ellipse cx="59" cy="89" rx="10" ry="8.5" fill="${H}" />`,
   hamstrings: () => `<ellipse cx="39.5" cy="100" rx="9" ry="17" fill="${H}" /><ellipse cx="60.5" cy="100" rx="9" ry="17" fill="${H}" />`,
   calves: () => `<polygon points="34.5,119 40,133 34.5,149 29,133" fill="${H}" /><polygon points="65.5,119 71,133 65.5,149 60,133" fill="${H}" />`,
 };
