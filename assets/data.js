@@ -125,7 +125,7 @@ const PROGRAM = {
         {
           name: "Bent Over DB Rear Delt Fly",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["rearDelts"] } },
+          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["shoulders"] } },
           guideline: "Hinge forward with a flat back and a soft bend in your knees. Raise the dumbbells out to the sides until level with your shoulders, then lower slowly.",
         },
         {
