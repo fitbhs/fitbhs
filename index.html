@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fitbhs — Train / Log</title>
+<meta name="description" content="Training and nutrition plan tracker." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <span class="brand">fitbhs</span>
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn active" data-target="overview">Overview</button>
+      <button class="tab-btn" data-target="workouts">Workouts</button>
+      <button class="tab-btn" data-target="nutrition">Nutrition</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="overview" class="panel active">
+    <h1 id="week-title">Week 1 — Train/Log</h1>
+    <p class="subtitle" id="week-sub"></p>
+    <p class="goal" id="week-goal"></p>
+
+    <h2>This Week at a Glance</h2>
+    <div class="schedule-grid" id="schedule-grid"></div>
+
+    <h2>Daily Targets</h2>
+    <div class="table-wrap">
+      <table class="targets-table" id="targets-table"></table>
+    </div>
+
+    <h2>Daily Rhythm — Water &amp; Supplements</h2>
+    <div class="table-wrap">
+      <table class="rhythm-table" id="rhythm-table"></table>
+    </div>
+
+    <h2>Baseline</h2>
+    <div class="baseline-grid" id="baseline-grid"></div>
+  </section>
+
+  <section id="workouts" class="panel">
+    <h1>Workouts</h1>
+    <p class="subtitle">Tap an exercise to expand it and pull up a form tutorial.</p>
+    <div id="workout-days"></div>
+  </section>
+
+  <section id="nutrition" class="panel">
+    <h1>Nutrition</h1>
+    <div class="nutrition-tabs" id="nutrition-tabs"></div>
+    <div id="nutrition-days"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Structure adapted from Lahiru's 8-week program, recalibrated to your stats.</div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
