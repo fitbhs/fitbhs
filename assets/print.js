@@ -138,26 +138,29 @@
   }
 
   function renderWorkouts(root) {
-    const sec = el("section", { class: "print-section", id: "p-workouts" }, [el("h2", { text: "Workouts" })]);
-    PROGRAM.workouts.forEach((day) => {
-      sec.appendChild(
+    const sec = el("section", { class: "print-section", id: "p-workouts" });
+    PROGRAM.workouts.forEach((day, i) => {
+      const dayGroup = el("div", { class: "p-day" }, [
+        i === 0 ? el("h2", { text: "Workouts" }) : null,
         el("div", { class: "p-day-header" }, [
           el("span", { class: "p-day-tag", text: day.day }),
           el("h3", { text: day.name }),
           el("span", { class: "p-day-muscles", text: day.muscles }),
           el("span", { class: "p-day-protocol", text: day.protocol }),
-        ])
-      );
-      day.exercises.forEach((ex) => sec.appendChild(buildExercisePrint(ex)));
+        ]),
+      ]);
+      day.exercises.forEach((ex) => dayGroup.appendChild(buildExercisePrint(ex)));
+      sec.appendChild(dayGroup);
     });
     root.appendChild(sec);
   }
 
   function renderNutrition(root) {
-    const sec = el("section", { class: "print-section", id: "p-nutrition" }, [el("h2", { text: "Nutrition" })]);
-    PROGRAM.nutritionDays.forEach((nd) => {
+    const sec = el("section", { class: "print-section", id: "p-nutrition" });
+    PROGRAM.nutritionDays.forEach((nd, i) => {
       sec.appendChild(
         el("div", { class: "p-nutrition-day" }, [
+          i === 0 ? el("h2", { text: "Nutrition" }) : null,
           el("div", { class: "p-nutrition-head" }, [
             el("h3", { text: nd.label }),
             el("span", { text: nd.appliesTo }),
