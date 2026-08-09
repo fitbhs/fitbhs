@@ -86,7 +86,7 @@ const PROGRAM = {
         {
           name: "Overhead Rope Tricep Extension",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps", badge: { view: "back", muscles: ["triceps"] } },
+          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps", badge: { view: "back", muscles: ["triceps"] }, badgePosition: "bottom-left" },
           guideline: "With the rope behind your head, extend your arms overhead until straight, keeping your elbows close to your ears, then lower back behind your head.",
         },
         {
@@ -239,7 +239,7 @@ const PROGRAM = {
         {
           name: "Overhead Rope Tricep Extension",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps", badge: { view: "back", muscles: ["triceps"] } },
+          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps", badge: { view: "back", muscles: ["triceps"] }, badgePosition: "bottom-left" },
           guideline: "With the rope behind your head, extend your arms overhead until straight, keeping your elbows close to your ears, then lower back behind your head.",
         },
         {
