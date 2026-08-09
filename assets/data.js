@@ -7,6 +7,36 @@
 // and the before/after pair shown on expansion.
 // `guideline` is a short form cue shown when the exercise is expanded.
 
+// Approximate box (percent of image width/height) around the targeted
+// muscle in that exerciseId's photo, hand-placed by eye against the
+// actual start-frame photo. Used to draw a highlight overlay on top of
+// the real photo. Same box is reused for the start/finish photo pair.
+const MUSCLE_HIGHLIGHTS = {
+  Incline_Dumbbell_Press: { left: 50, top: 24, width: 20, height: 18 },
+  Incline_Dumbbell_Flyes: { left: 52, top: 30, width: 20, height: 18 },
+  Dumbbell_Shoulder_Press: { left: 42, top: 28, width: 24, height: 16 },
+  Side_Lateral_Raise: { left: 40, top: 24, width: 20, height: 15 },
+  "Triceps_Pushdown_-_Rope_Attachment": { left: 44, top: 30, width: 14, height: 18 },
+  Triceps_Overhead_Extension_with_Rope: { left: 75, top: 26, width: 16, height: 22 },
+  Seated_Calf_Raise: { left: 33, top: 53, width: 14, height: 20 },
+  "Bent_Over_Two-Dumbbell_Row_With_Palms_In": { left: 44, top: 28, width: 16, height: 18 },
+  "Wide-Grip_Lat_Pulldown": { left: 66, top: 42, width: 14, height: 20 },
+  Seated_Cable_Rows: { left: 24, top: 32, width: 16, height: 22 },
+  Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench: { left: 54, top: 10, width: 16, height: 14 },
+  Dumbbell_Alternate_Bicep_Curl: { left: 28, top: 20, width: 16, height: 24 },
+  Alternate_Hammer_Curl: { left: 29, top: 24, width: 14, height: 20 },
+  Dumbbell_Shrug: { left: 42, top: 12, width: 16, height: 14 },
+  Narrow_Stance_Leg_Press: { left: 32, top: 36, width: 20, height: 20 },
+  Goblet_Squat: { left: 44, top: 52, width: 22, height: 20 },
+  Leg_Extensions: { left: 44, top: 52, width: 16, height: 18 },
+  Lying_Leg_Curls: { left: 38, top: 48, width: 20, height: 20 },
+  Romanian_Deadlift: { left: 43, top: 56, width: 16, height: 20 },
+  Standing_Calf_Raises: { left: 45, top: 58, width: 14, height: 18 },
+  Leverage_Shoulder_Press: { left: 36, top: 42, width: 26, height: 18 },
+  "Close-Grip_Front_Lat_Pulldown": { left: 45, top: 33, width: 16, height: 18 },
+  "EZ-Bar_Curl": { left: 40, top: 24, width: 20, height: 18 },
+};
+
 const PROGRAM = {
   week: 1,
   startDate: "2026-07-22",

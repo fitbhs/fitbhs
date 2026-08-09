@@ -12,6 +12,15 @@
     return "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
   }
 
+  function muscleHighlight(exerciseId) {
+    const box = typeof MUSCLE_HIGHLIGHTS !== "undefined" ? MUSCLE_HIGHLIGHTS[exerciseId] : null;
+    if (!box) return null;
+    return el("span", {
+      class: "muscle-highlight",
+      style: `left:${box.left}%; top:${box.top}%; width:${box.width}%; height:${box.height}%;`,
+    });
+  }
+
   function el(tag, opts, children) {
     const node = document.createElement(tag);
     if (opts) {
@@ -122,7 +131,7 @@
         })
       : null;
     const row = el("button", { class: "exercise-row", type: "button" }, [
-      el("span", { class: "thumb", title: thumbTitle }, [thumbImg]),
+      el("span", { class: "thumb", title: thumbTitle }, [thumbImg, ex.thumb ? muscleHighlight(ex.thumb.exerciseId) : null]),
       el("span", { class: "info" }, [
         el("span", { class: "name", text: ex.name }),
         el("span", { class: "setsreps", text: ex.setsReps }),
@@ -139,10 +148,12 @@
         el("div", { class: "motion-photos" }, [
           el("div", { class: "motion-photo" }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 0), alt: ex.name + " — start position", loading: "lazy" }),
+            muscleHighlight(ex.thumb.exerciseId),
             el("span", { class: "motion-label", text: "Start" }),
           ]),
           el("div", { class: "motion-photo" }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 1), alt: ex.name + " — finish position", loading: "lazy" }),
+            muscleHighlight(ex.thumb.exerciseId),
             el("span", { class: "motion-label", text: "Finish" }),
           ]),
         ])
