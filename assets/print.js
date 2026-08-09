@@ -106,14 +106,15 @@
   function buildExercisePrint(ex) {
     const card = el("div", { class: "p-exercise" });
     if (ex.thumb) {
+      const photoClass = ex.thumb.badgePosition ? "p-photo badge-" + ex.thumb.badgePosition : "p-photo";
       card.appendChild(
         el("div", { class: "p-photos" }, [
-          el("div", { class: "p-photo" }, [
+          el("div", { class: photoClass }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 0), alt: ex.name + " start" }),
             muscleBadge(ex.thumb.badge),
             el("span", { class: "p-label", text: "Start" }),
           ]),
-          el("div", { class: "p-photo" }, [
+          el("div", { class: photoClass }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 1), alt: ex.name + " finish" }),
             muscleBadge(ex.thumb.badge),
             el("span", { class: "p-label", text: "Finish" }),

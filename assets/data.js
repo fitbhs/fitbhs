@@ -56,13 +56,13 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] }, badgePosition: "bottom" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Neutral-Grip Fly",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] }, badgePosition: "bottom" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {
@@ -107,7 +107,7 @@ const PROGRAM = {
         {
           name: "Bent Over Neutral-Grip DB Row",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Bent_Over_Two-Dumbbell_Row_With_Palms_In", targets: "Lats, Upper Back", badge: { view: "back", muscles: ["lats", "traps"] } },
+          thumb: { exerciseId: "Bent_Over_Two-Dumbbell_Row_With_Palms_In", targets: "Lats, Upper Back", badge: { view: "back", muscles: ["lats", "traps"] }, badgePosition: "left" },
           guideline: "Hinge forward at the hips with a flat back. Pull the dumbbells up toward your hips, driving your elbows back, then lower with control.",
         },
         {
@@ -125,7 +125,7 @@ const PROGRAM = {
         {
           name: "Bent Over DB Rear Delt Fly",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["shoulders"] } },
+          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["shoulders"] }, badgePosition: "left" },
           guideline: "Hinge forward with a flat back and a soft bend in your knees. Raise the dumbbells out to the sides until level with your shoulders, then lower slowly.",
         },
         {
@@ -203,13 +203,13 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] }, badgePosition: "bottom" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Fly (Neutral Grip)",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] }, badgePosition: "bottom" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {
