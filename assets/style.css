@@ -165,8 +165,8 @@ table th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-tr
 .exercise-row:hover { background: var(--bg-elev-2); }
 .exercise-row .thumb {
   flex: none;
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 76px;
   border-radius: 10px;
   overflow: hidden;
   background: var(--bg-elev-2);
@@ -176,17 +176,19 @@ table th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-tr
 .exercise-row .info { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .exercise-row .name { font-weight: 600; }
 .exercise-row .setsreps { color: var(--text-dim); font-size: 0.85rem; }
+.exercise-row .targets { color: var(--accent); font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
 .exercise-row .chevron { flex: none; transition: transform 0.15s ease; color: var(--text-dim); }
 .exercise.open .chevron { transform: rotate(90deg); color: var(--accent); }
 
 .exercise-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease;
+  transition: max-height 0.25s ease;
   background: var(--bg-elev-2);
 }
-.exercise.open .exercise-panel { max-height: 500px; }
+.exercise.open .exercise-panel { max-height: 700px; }
 .exercise-panel-inner { padding: 4px 18px 18px; }
+.guideline { color: var(--text); font-size: 0.88rem; line-height: 1.55; margin: 8px 0 4px; }
 
 .video-embed { position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden; background: #000; margin-top: 6px; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
