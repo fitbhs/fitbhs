@@ -107,12 +107,16 @@
   // ---------- Workouts ----------
   function buildExercise(ex) {
     const wrap = el("div", { class: "exercise" });
+    const thumbTitle = ex.thumb
+      ? "Targets: " + ex.thumb.muscles.join(", ") + (MOTION_LABELS[ex.thumb.motion] ? " · " + MOTION_LABELS[ex.thumb.motion] : "")
+      : "";
     const row = el("button", { class: "exercise-row", type: "button" }, [
-      el("span", { class: "name", text: ex.name }),
-      el("span", { class: "meta" }, [
-        el("span", { text: ex.setsReps }),
-        el("span", { class: "chevron", html: "&#9656;" }),
+      el("span", { class: "thumb", html: muscleMapSvg(ex.thumb), title: thumbTitle }),
+      el("span", { class: "info" }, [
+        el("span", { class: "name", text: ex.name }),
+        el("span", { class: "setsreps", text: ex.setsReps }),
       ]),
+      el("span", { class: "chevron", html: "&#9656;" }),
     ]);
 
     const videoId = PROGRAM.videoOverrides && PROGRAM.videoOverrides[ex.name];

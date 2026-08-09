@@ -1,5 +1,12 @@
 // Week 1 plan data — edit this file to add real YouTube video IDs
 // or to update sets/reps/nutrition as the program progresses.
+//
+// Each exercise has a `thumb` describing its muscle-map thumbnail:
+//   view:    "front" or "back" — which body silhouette to draw
+//   muscles: keys drawn on that silhouette, see assets/muscles.js
+//     front: chest, shoulders, biceps, forearms, quads
+//     back:  traps, rearDelts, lats, triceps, hamstrings, glutes, calves
+//   motion:  "vertical" | "horizontal" | "rotate" — small movement badge
 
 const PROGRAM = {
   week: 1,
@@ -43,13 +50,13 @@ const PROGRAM = {
       muscles: "Chest / Shoulders / Triceps / Calves",
       protocol: "3 sets · 60-90 sec rest · RPE Moderate",
       exercises: [
-        { name: "30° Incline DB Bench Press", setsReps: "3 × 8" },
-        { name: "30° Incline DB Neutral-Grip Fly", setsReps: "3 × 8" },
-        { name: "Seated Back-Supported DB Shoulder Press", setsReps: "3 × 8" },
-        { name: "Standing DB Lateral Raise", setsReps: "3 × 8-10" },
-        { name: "Rope Tricep Pushdown", setsReps: "3 × 8" },
-        { name: "Overhead Rope Tricep Extension", setsReps: "3 × 8" },
-        { name: "Seated Calf Raise", setsReps: "3 × 25" },
+        { name: "30° Incline DB Bench Press", setsReps: "3 × 8", thumb: { view: "front", muscles: ["chest", "shoulders"], motion: "vertical" } },
+        { name: "30° Incline DB Neutral-Grip Fly", setsReps: "3 × 8", thumb: { view: "front", muscles: ["chest"], motion: "horizontal" } },
+        { name: "Seated Back-Supported DB Shoulder Press", setsReps: "3 × 8", thumb: { view: "front", muscles: ["shoulders"], motion: "vertical" } },
+        { name: "Standing DB Lateral Raise", setsReps: "3 × 8-10", thumb: { view: "front", muscles: ["shoulders"], motion: "vertical" } },
+        { name: "Rope Tricep Pushdown", setsReps: "3 × 8", thumb: { view: "back", muscles: ["triceps"], motion: "vertical" } },
+        { name: "Overhead Rope Tricep Extension", setsReps: "3 × 8", thumb: { view: "back", muscles: ["triceps"], motion: "vertical" } },
+        { name: "Seated Calf Raise", setsReps: "3 × 25", thumb: { view: "back", muscles: ["calves"], motion: "vertical" } },
       ],
     },
     {
@@ -59,13 +66,13 @@ const PROGRAM = {
       muscles: "Back / Biceps / Traps",
       protocol: "3 sets · 60-90 sec rest · RPE Moderate",
       exercises: [
-        { name: "Bent Over Neutral-Grip DB Row", setsReps: "3 × 8" },
-        { name: "Seated Mid-Grip Lat Pulldown", setsReps: "3 × 8" },
-        { name: "Seated Cable Row", setsReps: "3 × 8" },
-        { name: "Bent Over DB Rear Delt Fly", setsReps: "3 × 8" },
-        { name: "Alternating DB Bicep Curls", setsReps: "3 × 8" },
-        { name: "Alternating DB Hammer Curls", setsReps: "3 × 8" },
-        { name: "Standing DB Shrug", setsReps: "3 × 8" },
+        { name: "Bent Over Neutral-Grip DB Row", setsReps: "3 × 8", thumb: { view: "back", muscles: ["lats", "traps"], motion: "horizontal" } },
+        { name: "Seated Mid-Grip Lat Pulldown", setsReps: "3 × 8", thumb: { view: "back", muscles: ["lats"], motion: "vertical" } },
+        { name: "Seated Cable Row", setsReps: "3 × 8", thumb: { view: "back", muscles: ["lats", "traps"], motion: "horizontal" } },
+        { name: "Bent Over DB Rear Delt Fly", setsReps: "3 × 8", thumb: { view: "back", muscles: ["rearDelts"], motion: "horizontal" } },
+        { name: "Alternating DB Bicep Curls", setsReps: "3 × 8", thumb: { view: "front", muscles: ["biceps"], motion: "rotate" } },
+        { name: "Alternating DB Hammer Curls", setsReps: "3 × 8", thumb: { view: "front", muscles: ["biceps", "forearms"], motion: "rotate" } },
+        { name: "Standing DB Shrug", setsReps: "3 × 8", thumb: { view: "back", muscles: ["traps"], motion: "vertical" } },
       ],
     },
     {
@@ -75,12 +82,12 @@ const PROGRAM = {
       muscles: "Quads / Hamstrings / Calves",
       protocol: "3 sets · 60-90 sec rest · RPE Moderate",
       exercises: [
-        { name: "Narrow Stance Leg Press", setsReps: "3 × 8" },
-        { name: "Goblet Squat", setsReps: "3 × 8" },
-        { name: "Leg Extension (Plantar Flexed)", setsReps: "3 × 8" },
-        { name: "Prone Hamstring Curl (Dorsi Flexed)", setsReps: "3 × 8" },
-        { name: "Dumbbell Romanian Deadlift", setsReps: "3 × 8" },
-        { name: "Calf Press / Standing Calf Raise", setsReps: "3 × 25-30" },
+        { name: "Narrow Stance Leg Press", setsReps: "3 × 8", thumb: { view: "front", muscles: ["quads"], motion: "vertical" } },
+        { name: "Goblet Squat", setsReps: "3 × 8", thumb: { view: "front", muscles: ["quads"], motion: "vertical" } },
+        { name: "Leg Extension (Plantar Flexed)", setsReps: "3 × 8", thumb: { view: "front", muscles: ["quads"], motion: "rotate" } },
+        { name: "Prone Hamstring Curl (Dorsi Flexed)", setsReps: "3 × 8", thumb: { view: "back", muscles: ["hamstrings"], motion: "rotate" } },
+        { name: "Dumbbell Romanian Deadlift", setsReps: "3 × 8", thumb: { view: "back", muscles: ["hamstrings", "glutes"], motion: "vertical" } },
+        { name: "Calf Press / Standing Calf Raise", setsReps: "3 × 25-30", thumb: { view: "back", muscles: ["calves"], motion: "vertical" } },
       ],
     },
     {
@@ -90,14 +97,14 @@ const PROGRAM = {
       muscles: "Chest / Shoulders / Back / Biceps / Triceps",
       protocol: "3 sets · 60-90 sec rest · RPE Moderate",
       exercises: [
-        { name: "30° Incline DB Bench Press", setsReps: "3 × 8" },
-        { name: "30° Incline DB Fly (Neutral Grip)", setsReps: "3 × 8" },
-        { name: "Standing DB Lateral Raise", setsReps: "3 × 8" },
-        { name: "Pin/Plate Loaded Shoulder Press", setsReps: "3 × 15" },
-        { name: "Narrow Neutral-Grip Lat Pulldown", setsReps: "3 × 12" },
-        { name: "Narrow Neutral-Grip Cable Row", setsReps: "3 × 8" },
-        { name: "Overhead Rope Tricep Extension", setsReps: "3 × 8" },
-        { name: "EZ Bar Bicep Curls", setsReps: "3 × 12" },
+        { name: "30° Incline DB Bench Press", setsReps: "3 × 8", thumb: { view: "front", muscles: ["chest", "shoulders"], motion: "vertical" } },
+        { name: "30° Incline DB Fly (Neutral Grip)", setsReps: "3 × 8", thumb: { view: "front", muscles: ["chest"], motion: "horizontal" } },
+        { name: "Standing DB Lateral Raise", setsReps: "3 × 8", thumb: { view: "front", muscles: ["shoulders"], motion: "vertical" } },
+        { name: "Pin/Plate Loaded Shoulder Press", setsReps: "3 × 15", thumb: { view: "front", muscles: ["shoulders"], motion: "vertical" } },
+        { name: "Narrow Neutral-Grip Lat Pulldown", setsReps: "3 × 12", thumb: { view: "back", muscles: ["lats"], motion: "vertical" } },
+        { name: "Narrow Neutral-Grip Cable Row", setsReps: "3 × 8", thumb: { view: "back", muscles: ["lats", "traps"], motion: "horizontal" } },
+        { name: "Overhead Rope Tricep Extension", setsReps: "3 × 8", thumb: { view: "back", muscles: ["triceps"], motion: "vertical" } },
+        { name: "EZ Bar Bicep Curls", setsReps: "3 × 12", thumb: { view: "front", muscles: ["biceps"], motion: "rotate" } },
       ],
     },
   ],
