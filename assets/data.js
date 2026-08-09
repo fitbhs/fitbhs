@@ -159,7 +159,7 @@ const PROGRAM = {
           name: "Narrow Stance Leg Press",
           setsReps: "3 × 8",
           thumb: { exerciseId: "Narrow_Stance_Leg_Press", targets: "Quads", badge: { view: "front", muscles: ["quads"] } },
-          guideline: "Feet close together on the platform. Lower until your knees reach about 90°, then press through your heels back to the start without locking your knees out.",
+          guideline: "Feet close together on the platform. Lower until your knees reach about 90°, then press through your heels back to the start without locking your knees out. The narrow stance shifts emphasis to the outer sweep of the quads (vastus lateralis) — a wider stance would bias the inner thigh more.",
         },
         {
           name: "Goblet Squat",
