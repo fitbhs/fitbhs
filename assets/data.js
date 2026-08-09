@@ -56,13 +56,13 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] }, badgePosition: "bottom" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Neutral-Grip Fly",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] }, badgePosition: "bottom" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {
@@ -203,13 +203,13 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts", badge: { view: "front", muscles: ["chest", "shoulders"] }, badgePosition: "bottom" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Fly (Neutral Grip)",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] } },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest", badge: { view: "front", muscles: ["chest"] }, badgePosition: "bottom" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {

@@ -106,7 +106,7 @@
   function buildExercisePrint(ex) {
     const card = el("div", { class: "p-exercise" });
     if (ex.thumb) {
-      const photoClass = ex.thumb.badgePosition === "left" ? "p-photo badge-left" : "p-photo";
+      const photoClass = ex.thumb.badgePosition ? "p-photo badge-" + ex.thumb.badgePosition : "p-photo";
       card.appendChild(
         el("div", { class: "p-photos" }, [
           el("div", { class: photoClass }, [

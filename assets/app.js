@@ -140,7 +140,7 @@
     const panelInner = el("div", { class: "exercise-panel-inner" });
 
     if (ex.thumb) {
-      const photoClass = ex.thumb.badgePosition === "left" ? "motion-photo badge-left" : "motion-photo";
+      const photoClass = ex.thumb.badgePosition ? "motion-photo badge-" + ex.thumb.badgePosition : "motion-photo";
       panelInner.appendChild(
         el("div", { class: "motion-photos" }, [
           el("div", { class: photoClass }, [

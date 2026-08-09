@@ -116,6 +116,7 @@ table th { color: var(--text-dim); font-size: 8pt; text-transform: uppercase; }
   padding: 2px;
 }
 .p-photo.badge-left .muscle-badge { left: 4px; right: auto; }
+.p-photo.badge-bottom .muscle-badge { top: auto; bottom: 4px; }
 .muscle-badge svg { width: 100%; height: 100%; display: block; }
 
 .p-body { flex: 1; min-width: 0; }
