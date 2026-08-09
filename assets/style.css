@@ -294,3 +294,10 @@ table th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-tr
   .schedule-grid { grid-template-columns: repeat(4, 1fr); }
   h1 { font-size: 1.35rem; }
 }
+
+@media (max-width: 480px) {
+  .pdf-btn-label { display: none; }
+  .pdf-btn { padding: 8px 10px; font-size: 1rem; }
+  .site-header .wrap { row-gap: 10px; }
+  .tabs { order: 3; flex-basis: 100%; }
+}
