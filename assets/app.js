@@ -127,7 +127,7 @@
         })
       : null;
     const row = el("button", { class: "exercise-row", type: "button" }, [
-      el("span", { class: "thumb", title: thumbTitle }, [thumbImg, ex.thumb ? muscleBadge(ex.thumb.badge) : null]),
+      el("span", { class: "thumb", title: thumbTitle }, [thumbImg]),
       el("span", { class: "info" }, [
         el("span", { class: "name", text: ex.name }),
         el("span", { class: "setsreps", text: ex.setsReps }),

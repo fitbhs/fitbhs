@@ -177,17 +177,16 @@ table th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-tr
 
 .muscle-badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 22px;
-  height: 30px;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 42px;
   background: #ffffff;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
-  padding: 2px;
+  padding: 3px;
 }
 .muscle-badge svg { width: 100%; height: 100%; display: block; }
-.motion-photo .muscle-badge { width: 30px; height: 42px; top: 8px; right: 8px; border-radius: 8px; padding: 3px; }
 .exercise-row .info { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .exercise-row .name { font-weight: 600; }
 .exercise-row .setsreps { color: var(--text-dim); font-size: 0.85rem; }
