@@ -1,13 +1,10 @@
 // Week 1 plan data — edit this file to add real YouTube video IDs
 // or to update sets/reps/nutrition as the program progresses.
 //
-// Each exercise has a `thumb` describing its illustrated thumbnail
-// (see assets/muscles.js for the renderer):
-//   pose:      a key into POSES — a start/end stick-figure position
-//   equip:     which equipment icon to draw at the hand (or null)
-//   highlight: which body segment(s) light up as the targeted muscle
-//   targets:   human-readable muscle list, used for the thumbnail's
-//              accessible label / hover tooltip
+// Each exercise has a `thumb.exerciseId` pointing at an entry in the
+// free-exercise-db (public domain, see assets/app.js IMAGE_BASE) —
+// real photos of the start and end position, used for the thumbnail
+// and the before/after pair shown on expansion.
 // `guideline` is a short form cue shown when the exercise is expanded.
 
 const PROGRAM = {
@@ -55,43 +52,43 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { pose: "inclinePress", equip: "dumbbellPair", highlight: { torso: true, shoulders: true }, targets: "Chest, Front Delts" },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Neutral-Grip Fly",
           setsReps: "3 × 8",
-          thumb: { pose: "inclineFly", equip: "dumbbellPair", highlight: { torso: true }, targets: "Chest" },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {
           name: "Seated Back-Supported DB Shoulder Press",
           setsReps: "3 × 8",
-          thumb: { pose: "seatedOverheadPress", equip: "dumbbellPair", highlight: { shoulders: true, upperArm: true }, targets: "Shoulders, Triceps" },
+          thumb: { exerciseId: "Dumbbell_Shoulder_Press", targets: "Shoulders, Triceps" },
           guideline: "Sit with your back supported, dumbbells at shoulder height. Press straight overhead until your arms are extended, then lower back to shoulder height under control.",
         },
         {
           name: "Standing DB Lateral Raise",
           setsReps: "3 × 8-10",
-          thumb: { pose: "standingLateralRaise", equip: "dumbbellPair", highlight: { shoulders: true }, targets: "Side Delts" },
+          thumb: { exerciseId: "Side_Lateral_Raise", targets: "Side Delts" },
           guideline: "Stand tall with a slight bend in your elbows. Raise the dumbbells out to your sides until they reach shoulder height, leading with your elbows, then lower slowly.",
         },
         {
           name: "Rope Tricep Pushdown",
           setsReps: "3 × 8",
-          thumb: { pose: "cablePushdown", equip: "cableHigh", highlight: { upperArm: true }, targets: "Triceps" },
+          thumb: { exerciseId: "Triceps_Pushdown_-_Rope_Attachment", targets: "Triceps" },
           guideline: "Keep your elbows tucked at your sides. Push the rope down until your arms are fully extended, splitting the rope apart at the bottom, then control it back up.",
         },
         {
           name: "Overhead Rope Tricep Extension",
           setsReps: "3 × 8",
-          thumb: { pose: "overheadTricepExt", equip: "cableLowBehind", highlight: { upperArm: true }, targets: "Triceps" },
+          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps" },
           guideline: "With the rope behind your head, extend your arms overhead until straight, keeping your elbows close to your ears, then lower back behind your head.",
         },
         {
           name: "Seated Calf Raise",
           setsReps: "3 × 25",
-          thumb: { pose: "seatedCalfRaise", equip: null, highlight: { calf: true }, targets: "Calves" },
+          thumb: { exerciseId: "Seated_Calf_Raise", targets: "Calves" },
           guideline: "With the pad resting on your knees, lower your heels as far as comfortable, then press up onto your toes and squeeze at the top.",
         },
       ],
@@ -106,43 +103,43 @@ const PROGRAM = {
         {
           name: "Bent Over Neutral-Grip DB Row",
           setsReps: "3 × 8",
-          thumb: { pose: "bentOverRow", equip: "dumbbellPair", highlight: { torso: true }, targets: "Lats, Upper Back" },
+          thumb: { exerciseId: "Bent_Over_Two-Dumbbell_Row_With_Palms_In", targets: "Lats, Upper Back" },
           guideline: "Hinge forward at the hips with a flat back. Pull the dumbbells up toward your hips, driving your elbows back, then lower with control.",
         },
         {
           name: "Seated Mid-Grip Lat Pulldown",
           setsReps: "3 × 8",
-          thumb: { pose: "latPulldown", equip: "cableHighBar", highlight: { torso: true }, targets: "Lats" },
+          thumb: { exerciseId: "Wide-Grip_Lat_Pulldown", targets: "Lats" },
           guideline: "Pull the bar down to your upper chest, driving your elbows down and back. Control the weight back up until your arms are fully extended.",
         },
         {
           name: "Seated Cable Row",
           setsReps: "3 × 8",
-          thumb: { pose: "seatedCableRow", equip: "cableLowFront", highlight: { torso: true }, targets: "Lats, Mid Back" },
+          thumb: { exerciseId: "Seated_Cable_Rows", targets: "Lats, Mid Back" },
           guideline: "Sit tall with a slight forward lean at the bottom. Pull the handle to your torso, squeezing your shoulder blades together, then extend back with control.",
         },
         {
           name: "Bent Over DB Rear Delt Fly",
           setsReps: "3 × 8",
-          thumb: { pose: "rearDeltFly", equip: "dumbbellPair", highlight: { shoulders: true }, targets: "Rear Delts" },
+          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts" },
           guideline: "Hinge forward with a flat back and a soft bend in your knees. Raise the dumbbells out to the sides until level with your shoulders, then lower slowly.",
         },
         {
           name: "Alternating DB Bicep Curls",
           setsReps: "3 × 8",
-          thumb: { pose: "bicepCurl", equip: "dumbbellSingle", highlight: { upperArm: true }, targets: "Biceps" },
+          thumb: { exerciseId: "Dumbbell_Alternate_Bicep_Curl", targets: "Biceps" },
           guideline: "Keep your elbows pinned to your sides. Curl one dumbbell up toward your shoulder, rotating your palm up, then lower and repeat on the other side.",
         },
         {
           name: "Alternating DB Hammer Curls",
           setsReps: "3 × 8",
-          thumb: { pose: "bicepCurl", equip: "dumbbellSingle", highlight: { upperArm: true, forearm: true }, targets: "Biceps, Forearms" },
+          thumb: { exerciseId: "Alternate_Hammer_Curl", targets: "Biceps, Forearms" },
           guideline: "Keep your elbows pinned to your sides and palms facing each other throughout. Curl one dumbbell up toward your shoulder, then lower and alternate.",
         },
         {
           name: "Standing DB Shrug",
           setsReps: "3 × 8",
-          thumb: { pose: "standingShrug", equip: "dumbbellPair", highlight: { shoulders: true }, targets: "Traps" },
+          thumb: { exerciseId: "Dumbbell_Shrug", targets: "Traps" },
           guideline: "Hold the dumbbells at your sides. Shrug your shoulders straight up toward your ears, pause briefly, then lower with control — avoid rolling your shoulders.",
         },
       ],
@@ -157,37 +154,37 @@ const PROGRAM = {
         {
           name: "Narrow Stance Leg Press",
           setsReps: "3 × 8",
-          thumb: { pose: "legPress", equip: null, highlight: { thigh: true }, targets: "Quads" },
+          thumb: { exerciseId: "Narrow_Stance_Leg_Press", targets: "Quads" },
           guideline: "Feet close together on the platform. Lower until your knees reach about 90°, then press through your heels back to the start without locking your knees out.",
         },
         {
           name: "Goblet Squat",
           setsReps: "3 × 8",
-          thumb: { pose: "gobletSquat", equip: "dumbbellSingle", highlight: { thigh: true }, targets: "Quads, Glutes" },
+          thumb: { exerciseId: "Goblet_Squat", targets: "Quads, Glutes" },
           guideline: "Hold a dumbbell vertically at your chest. Squat down until your thighs are at least parallel to the floor, keeping your chest up, then drive back up through your heels.",
         },
         {
           name: "Leg Extension (Plantar Flexed)",
           setsReps: "3 × 8",
-          thumb: { pose: "legExtension", equip: null, highlight: { thigh: true }, targets: "Quads" },
+          thumb: { exerciseId: "Leg_Extensions", targets: "Quads" },
           guideline: "Point your toes (plantar flex) and extend your legs until straight, squeezing your quads at the top, then lower back down under control.",
         },
         {
           name: "Prone Hamstring Curl (Dorsi Flexed)",
           setsReps: "3 × 8",
-          thumb: { pose: "hamstringCurlProne", equip: null, highlight: { thigh: true }, targets: "Hamstrings" },
+          thumb: { exerciseId: "Lying_Leg_Curls", targets: "Hamstrings" },
           guideline: "Lying face down, flex your feet (toes toward shins) and curl your heels toward your glutes, then lower back down slowly.",
         },
         {
           name: "Dumbbell Romanian Deadlift",
           setsReps: "3 × 8",
-          thumb: { pose: "romanianDeadlift", equip: "dumbbellPair", highlight: { thigh: true, glutes: true }, targets: "Hamstrings, Glutes" },
+          thumb: { exerciseId: "Romanian_Deadlift", targets: "Hamstrings, Glutes" },
           guideline: "With a slight bend in your knees, hinge at the hips and lower the dumbbells along your legs, keeping your back flat. Drive your hips forward to return to standing.",
         },
         {
           name: "Calf Press / Standing Calf Raise",
           setsReps: "3 × 25-30",
-          thumb: { pose: "standingCalfRaise", equip: null, highlight: { calf: true }, targets: "Calves" },
+          thumb: { exerciseId: "Standing_Calf_Raises", targets: "Calves" },
           guideline: "From a full stretch at the bottom, press up onto your toes as high as possible, squeeze, then lower under control.",
         },
       ],
@@ -202,49 +199,49 @@ const PROGRAM = {
         {
           name: "30° Incline DB Bench Press",
           setsReps: "3 × 8",
-          thumb: { pose: "inclinePress", equip: "dumbbellPair", highlight: { torso: true, shoulders: true }, targets: "Chest, Front Delts" },
+          thumb: { exerciseId: "Incline_Dumbbell_Press", targets: "Chest, Front Delts" },
           guideline: "Set the bench to a 30° incline. Press the dumbbells up and slightly in until your arms are extended over your upper chest, then lower with control until your elbows are just below bench level.",
         },
         {
           name: "30° Incline DB Fly (Neutral Grip)",
           setsReps: "3 × 8",
-          thumb: { pose: "inclineFly", equip: "dumbbellPair", highlight: { torso: true }, targets: "Chest" },
+          thumb: { exerciseId: "Incline_Dumbbell_Flyes", targets: "Chest" },
           guideline: "Start with arms extended above your chest, palms facing each other. Lower the dumbbells out to the sides in a wide arc with a slight elbow bend, then bring them back together over your chest.",
         },
         {
           name: "Standing DB Lateral Raise",
           setsReps: "3 × 8",
-          thumb: { pose: "standingLateralRaise", equip: "dumbbellPair", highlight: { shoulders: true }, targets: "Side Delts" },
+          thumb: { exerciseId: "Side_Lateral_Raise", targets: "Side Delts" },
           guideline: "Stand tall with a slight bend in your elbows. Raise the dumbbells out to your sides until they reach shoulder height, leading with your elbows, then lower slowly.",
         },
         {
           name: "Pin/Plate Loaded Shoulder Press",
           setsReps: "3 × 15",
-          thumb: { pose: "seatedOverheadPress", equip: "machinePost", highlight: { shoulders: true }, targets: "Shoulders" },
+          thumb: { exerciseId: "Leverage_Shoulder_Press", targets: "Shoulders" },
           guideline: "Sit tall against the pad. Press the handles straight overhead until your arms are extended, then lower back to shoulder height.",
         },
         {
           name: "Narrow Neutral-Grip Lat Pulldown",
           setsReps: "3 × 12",
-          thumb: { pose: "latPulldown", equip: "cableHighBar", highlight: { torso: true }, targets: "Lats" },
+          thumb: { exerciseId: "Close-Grip_Front_Lat_Pulldown", targets: "Lats" },
           guideline: "Using the narrow neutral-grip handle, pull down to your upper chest, driving your elbows down close to your body, then control it back up.",
         },
         {
           name: "Narrow Neutral-Grip Cable Row",
           setsReps: "3 × 8",
-          thumb: { pose: "seatedCableRow", equip: "cableLowFront", highlight: { torso: true }, targets: "Lats, Mid Back" },
+          thumb: { exerciseId: "Seated_Cable_Rows", targets: "Lats, Mid Back" },
           guideline: "Pull the narrow handle to your torso, keeping your elbows close to your sides, then extend back out with control.",
         },
         {
           name: "Overhead Rope Tricep Extension",
           setsReps: "3 × 8",
-          thumb: { pose: "overheadTricepExt", equip: "cableLowBehind", highlight: { upperArm: true }, targets: "Triceps" },
+          thumb: { exerciseId: "Triceps_Overhead_Extension_with_Rope", targets: "Triceps" },
           guideline: "With the rope behind your head, extend your arms overhead until straight, keeping your elbows close to your ears, then lower back behind your head.",
         },
         {
           name: "EZ Bar Bicep Curls",
           setsReps: "3 × 12",
-          thumb: { pose: "bicepCurl", equip: "ezBar", highlight: { upperArm: true }, targets: "Biceps" },
+          thumb: { exerciseId: "EZ-Bar_Curl", targets: "Biceps" },
           guideline: "Using the EZ bar's angled grip, curl the bar up toward your shoulders, keeping your elbows fixed at your sides, then lower with control.",
         },
       ],
