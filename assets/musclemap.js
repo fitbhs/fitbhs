@@ -78,22 +78,25 @@ const BADGE_OVERLAYS = {
   calves: () => `<polygon points="34.5,119 40,133 34.5,149 29,133" fill="${H}" /><polygon points="65.5,119 71,133 65.5,149 60,133" fill="${H}" />`,
 };
 
-// Which panel(s) each muscle lights up on. Limb muscles are the same
-// physical spot in silhouette whether viewed from the front or back, so
-// they light up on both panels; torso muscles are only visible from one
-// side.
+// Which panel(s) each muscle lights up on. Biceps/triceps and quads/
+// hamstrings are opposite muscles on the same limb — never both visible
+// from one angle — so each only lights up on its actual side. Calves
+// (gastrocnemius) are a posterior muscle, back only. The deltoid wraps
+// the shoulder with a front and rear head, and the forearm has both
+// flexor (front) and extensor (back) compartments, so those genuinely
+// read on both panels. Torso muscles are only visible from one side.
 const MUSCLE_PANELS = {
   chest: ["front"],
   shoulders: ["front", "back"],
-  biceps: ["front", "back"],
+  biceps: ["front"],
   forearms: ["front", "back"],
-  quads: ["front", "back"],
+  quads: ["front"],
   traps: ["back"],
   lats: ["back"],
-  triceps: ["front", "back"],
+  triceps: ["back"],
   glutes: ["back"],
-  hamstrings: ["front", "back"],
-  calves: ["front", "back"],
+  hamstrings: ["back"],
+  calves: ["back"],
 };
 
 function panelSvg(muscles, side) {
