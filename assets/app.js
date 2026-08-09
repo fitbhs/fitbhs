@@ -140,14 +140,15 @@
     const panelInner = el("div", { class: "exercise-panel-inner" });
 
     if (ex.thumb) {
+      const photoClass = ex.thumb.badgePosition === "left" ? "motion-photo badge-left" : "motion-photo";
       panelInner.appendChild(
         el("div", { class: "motion-photos" }, [
-          el("div", { class: "motion-photo" }, [
+          el("div", { class: photoClass }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 0), alt: ex.name + " — start position", loading: "lazy" }),
             muscleBadge(ex.thumb.badge),
             el("span", { class: "motion-label", text: "Start" }),
           ]),
-          el("div", { class: "motion-photo" }, [
+          el("div", { class: photoClass }, [
             el("img", { src: exerciseImage(ex.thumb.exerciseId, 1), alt: ex.name + " — finish position", loading: "lazy" }),
             muscleBadge(ex.thumb.badge),
             el("span", { class: "motion-label", text: "Finish" }),

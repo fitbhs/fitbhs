@@ -107,7 +107,7 @@ const PROGRAM = {
         {
           name: "Bent Over Neutral-Grip DB Row",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Bent_Over_Two-Dumbbell_Row_With_Palms_In", targets: "Lats, Upper Back", badge: { view: "back", muscles: ["lats", "traps"] } },
+          thumb: { exerciseId: "Bent_Over_Two-Dumbbell_Row_With_Palms_In", targets: "Lats, Upper Back", badge: { view: "back", muscles: ["lats", "traps"] }, badgePosition: "left" },
           guideline: "Hinge forward at the hips with a flat back. Pull the dumbbells up toward your hips, driving your elbows back, then lower with control.",
         },
         {
@@ -125,7 +125,7 @@ const PROGRAM = {
         {
           name: "Bent Over DB Rear Delt Fly",
           setsReps: "3 × 8",
-          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["shoulders"] } },
+          thumb: { exerciseId: "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench", targets: "Rear Delts", badge: { view: "back", muscles: ["shoulders"] }, badgePosition: "left" },
           guideline: "Hinge forward with a flat back and a soft bend in your knees. Raise the dumbbells out to the sides until level with your shoulders, then lower slowly.",
         },
         {
