@@ -2,6 +2,12 @@
   const $ = (sel, el) => (el || document).querySelector(sel);
   const $$ = (sel, el) => Array.from((el || document).querySelectorAll(sel));
 
+  // Public-domain exercise photos: https://github.com/yuhonas/free-exercise-db
+  const IMAGE_BASE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/";
+  function exerciseImage(exerciseId, frame) {
+    return IMAGE_BASE + exerciseId + "/" + frame + ".jpg";
+  }
+
   function youtubeSearchUrl(query) {
     return "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
   }
@@ -107,20 +113,45 @@
   // ---------- Workouts ----------
   function buildExercise(ex) {
     const wrap = el("div", { class: "exercise" });
-    const thumbTitle = ex.thumb
-      ? "Targets: " + ex.thumb.muscles.join(", ") + (MOTION_LABELS[ex.thumb.motion] ? " · " + MOTION_LABELS[ex.thumb.motion] : "")
-      : "";
+    const thumbTitle = ex.thumb ? "Targets: " + ex.thumb.targets : "";
+    const thumbImg = ex.thumb
+      ? el("img", {
+          src: exerciseImage(ex.thumb.exerciseId, 0),
+          alt: ex.name,
+          loading: "lazy",
+        })
+      : null;
     const row = el("button", { class: "exercise-row", type: "button" }, [
-      el("span", { class: "thumb", html: muscleMapSvg(ex.thumb), title: thumbTitle }),
+      el("span", { class: "thumb", title: thumbTitle }, [thumbImg]),
       el("span", { class: "info" }, [
         el("span", { class: "name", text: ex.name }),
         el("span", { class: "setsreps", text: ex.setsReps }),
+        ex.thumb ? el("span", { class: "targets", text: ex.thumb.targets }) : null,
       ]),
       el("span", { class: "chevron", html: "&#9656;" }),
     ]);
 
     const videoId = PROGRAM.videoOverrides && PROGRAM.videoOverrides[ex.name];
     const panelInner = el("div", { class: "exercise-panel-inner" });
+
+    if (ex.thumb) {
+      panelInner.appendChild(
+        el("div", { class: "motion-photos" }, [
+          el("div", { class: "motion-photo" }, [
+            el("img", { src: exerciseImage(ex.thumb.exerciseId, 0), alt: ex.name + " — start position", loading: "lazy" }),
+            el("span", { class: "motion-label", text: "Start" }),
+          ]),
+          el("div", { class: "motion-photo" }, [
+            el("img", { src: exerciseImage(ex.thumb.exerciseId, 1), alt: ex.name + " — finish position", loading: "lazy" }),
+            el("span", { class: "motion-label", text: "Finish" }),
+          ]),
+        ])
+      );
+    }
+
+    if (ex.guideline) {
+      panelInner.appendChild(el("p", { class: "guideline", text: ex.guideline }));
+    }
 
     if (videoId) {
       panelInner.appendChild(
