@@ -43,6 +43,21 @@ function badgeSkeleton() {
 }
 
 const H = BADGE_HILITE;
+const HLINE = "#c73d17"; // darker line for muscle-separation detail on top of a highlight
+
+// A thigh (quads or hamstrings) with two internal lines suggesting the
+// separate muscle bellies (e.g. rectus femoris vs. vastus lateralis/
+// medialis, or biceps femoris vs. semitendinosus), instead of one flat
+// blob.
+function thighShape(cx, cy, rx, ry) {
+  return `
+    <ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${H}" />
+    <path d="M${cx},${cy - ry + 3} C${cx - 1},${cy} ${cx - 1},${cy + ry - 8} ${cx - 2.5},${cy + ry - 2}"
+      fill="none" stroke="${HLINE}" stroke-width="0.9" opacity="0.65" />
+    <path d="M${cx - rx * 0.5},${cy - ry + 6} C${cx - 2},${cy - 2} ${cx - 1},${cy + 6} ${cx + 1},${cy + ry - 3}"
+      fill="none" stroke="${HLINE}" stroke-width="0.8" opacity="0.55" />
+  `;
+}
 
 // Anatomically-shaped overlay for each muscle key, positioned on the
 // 100x160 body above.
@@ -51,7 +66,7 @@ const BADGE_OVERLAYS = {
   shoulders: () => `<circle cx="18" cy="28" r="9.5" fill="${H}" /><circle cx="82" cy="28" r="9.5" fill="${H}" />`,
   biceps: () => `<ellipse cx="18" cy="38" rx="8" ry="13" fill="${H}" /><ellipse cx="82" cy="38" rx="8" ry="13" fill="${H}" />`,
   forearms: () => `<ellipse cx="11.5" cy="65" rx="7" ry="12.5" fill="${H}" /><ellipse cx="88.5" cy="65" rx="7" ry="12.5" fill="${H}" />`,
-  quads: () => `<ellipse cx="39.5" cy="100" rx="9" ry="17" fill="${H}" /><ellipse cx="60.5" cy="100" rx="9" ry="17" fill="${H}" />`,
+  quads: () => thighShape(39.5, 100, 9, 17) + thighShape(60.5, 100, 9, 17),
   traps: () => `<polygon points="50,20 30,34 42,48 50,58 58,48 70,34" fill="${H}" />`,
   lats: () => `
     <path d="M30,33 C18,44 17,60 28,72 C34,60 37,45 34,33 Z" fill="${H}" />
@@ -59,7 +74,7 @@ const BADGE_OVERLAYS = {
   `,
   triceps: () => `<ellipse cx="18" cy="38" rx="8" ry="13" fill="${H}" /><ellipse cx="82" cy="38" rx="8" ry="13" fill="${H}" />`,
   glutes: () => `<ellipse cx="41" cy="89" rx="10" ry="8.5" fill="${H}" /><ellipse cx="59" cy="89" rx="10" ry="8.5" fill="${H}" />`,
-  hamstrings: () => `<ellipse cx="39.5" cy="100" rx="9" ry="17" fill="${H}" /><ellipse cx="60.5" cy="100" rx="9" ry="17" fill="${H}" />`,
+  hamstrings: () => thighShape(39.5, 100, 9, 17) + thighShape(60.5, 100, 9, 17),
   calves: () => `<polygon points="34.5,119 40,133 34.5,149 29,133" fill="${H}" /><polygon points="65.5,119 71,133 65.5,149 60,133" fill="${H}" />`,
 };
 
